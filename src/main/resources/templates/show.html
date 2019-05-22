@@ -12,6 +12,7 @@ Make:<span th:text="${car.make}" ></span> <br/>
 Model:<span th:text="${car.model}" ></span> <br/>
 
 <a th:href="@{/delete/{id}(id=${car.id})}"> Delete this car</a>
+<a th:href="@{/update/{id}(id=${car.id})}"> Update this car</a>
 
 </body>
 </html>
