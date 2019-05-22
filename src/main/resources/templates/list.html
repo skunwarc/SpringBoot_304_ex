@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-
+<a href="/add">Add a Car</a><br/>
 <table>
     <tr>
 
@@ -15,15 +15,15 @@
 
 
     </tr>
-    <tr th:each="car :${cars}">
+    <tr th:each="car: ${cars}">
         <td th:text="${car.year}"></td>
         <td th:text="${car.make}"></td>
         <td th:text="${car.model}"></td>
 
         <td>
-            <a th:href="@{/update/{year}(year=${car.year})}">Update</a>
-            <a th:href="@{/details/{year}(year=${car.year})}">Details</a>
-            <a th:href="@{/delete/{year}(year=${car.year})}">Delete</a>
+            <a th:href="@{/update/{id}(id=${car.id})}">Update</a>
+            <a th:href="@{/details/{id}(id=${car.id})}">Details</a>
+            <a th:href="@{/delete/{id}(id=${car.id})}">Delete</a>
         </td>
     </tr>
 </table>

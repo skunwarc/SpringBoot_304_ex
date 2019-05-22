@@ -36,20 +36,20 @@ public class HomeController {
         return "redirect:/";
 
     }
-    @RequestMapping("/detail/{year}")
-    public String showCar(@PathVariable("year") long year, Model model){
-        model.addAttribute("car",carRepository.findById(year).get());
+    @RequestMapping("/detail/{id}")
+    public String showCar(@PathVariable("id") long id, Model model){
+        model.addAttribute("car",carRepository.findById(id).get());
         return "show";
     }
-    @RequestMapping("/update/{year}")
-    public String updateTodo(@PathVariable("year") long year,Model model){
-        model.addAttribute("year",carRepository.findById(year).get());
+    @RequestMapping("/update/{id}")
+    public String updateCar(@PathVariable("id") long id,Model model){
+        model.addAttribute("year",carRepository.findById(id).get());
         return "carform";
     }
-    @RequestMapping("/delete/{year}")
-    public String delCourse(@PathVariable("year") long year){
+    @RequestMapping("/delete/{id}")
+    public String delCar(@PathVariable("id") long id){
 
-        carRepository.deleteById(year);
+        carRepository.deleteById(id);
         return "redirect:/";
     }
 
